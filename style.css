@@ -208,8 +208,12 @@ li span {
 
 /* 600px */
 @media screen and (width <600px) {
+  .wrapper{
+    width: 97%;
+  }
   .container{
     padding: 4rem 1rem;
+    width: 100%;
   }
   form button {
     font-size: 2vw;
