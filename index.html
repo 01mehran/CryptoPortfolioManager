@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Portfolio Manager</title>
+    <link rel="shortcut icon" href="/favicon/Fic.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div class="wrapper">
+
+        <div class="container">
+            <!-- Title -->
+            <h1>Crypto Portfolio Manager</h1>
+            <!-- Form -->
+            <form id="form">
+                <!-- Select -->
+                <select id="crypto-select">
+                    <option value="bitcoin">bitcoin</option>
+                    <option value="ripple">ripple</option>
+                    <option value="litecoin">litecoin</option>
+                    <option value="ethereum">ethereum</option>
+                    <option value="stellar">stellar</option>
+                    <option value="cardano">cardano</option>
+                    <option value="bitcoin-cash">bitcoin-cash</option>
+                    <option value="polkadot">polkadot</option>
+                    <option value="chainlink">chainlink</option>
+                    <option value="dogecoin">dogecoin</option>
+                </select>
+                <input type="number" id="token-amount" placeholder="token-amount" required />
+                <button type="submit" id="add-btn">Add to your portfolio</button>
+            </form>
+            <h2>Your portfolio :</h2>
+            <!-- PortfolioList -->
+            <ul id="list"></ul>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
