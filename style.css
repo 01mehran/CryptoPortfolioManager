@@ -6,8 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 body {
-  background-color: #848080;
+  /* background-color: #848080; */
+  background-image: linear-gradient( 110.3deg,  rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7% );
 }
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -110,7 +112,6 @@ ul li {
   justify-content: space-between;
   letter-spacing: 1;
   font-weight: 300;
-  
 }
 li span {
   color: rgba(238, 255, 6, 0.833);
@@ -124,7 +125,7 @@ li span {
   gap: 1rem;
 }
 .btnCo button {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   width: 8.5rem;
   cursor: pointer;
   border: 0;
@@ -132,7 +133,8 @@ li span {
   border-radius: 3px;
   transition: all 0.1s;
 }
-.btnCo .delete-btn, .btnCo .edit-btn {
+.btnCo .delete-btn,
+.btnCo .edit-btn {
   color: #fff;
   background: transparent;
   border: 1px solid #8a8585c0;
@@ -142,31 +144,29 @@ li span {
   background: rgba(241, 44, 44, 0.908);
   border-color: transparent;
 }
- .btnCo .edit-btn:hover {
+.btnCo .edit-btn:hover {
   background-color: rgba(255, 166, 0, 0.659);
-
- }
+}
 
 /* media */
 
-@media screen and (width < 1300px){
-  ul{
+@media screen and (width < 1300px) {
+  ul {
     justify-content: center;
   }
-  ul li{
+  ul li {
     flex-direction: column;
     text-align: left;
   }
-  .btnCo{
+  .btnCo {
     justify-content: center;
     /* background: #000; */
     width: 100%;
     margin-top: 1rem;
   }
-  .btnCo button{
-    width:calc(100% / 2 - 50px)
+  .btnCo button {
+    width: calc(100% / 2 - 50px);
   }
-
 }
 @media screen and (width < 1150px) {
   .container h1 {
@@ -181,51 +181,41 @@ li span {
     flex-direction: column;
     gap: 2.5rem;
   }
-  /* .btnCo{
-    flex-direction: column;
-  } */
-  ul{
+
+  ul {
     max-width: 90%;
   }
-  ul li{
+  ul li {
     font-size: 18px;
     padding: 1rem 3rem;
   }
 }
-@media screen and (width <800px){
+@media screen and (width <800px) {
   .btnCo {
     width: 100%;
-    /* background: #000; */
     flex-direction: column;
   }
-  .btnCo button{
+  .btnCo button {
     width: 100%;
     color: red;
   }
-
 }
-
-
-/* 600px */
 @media screen and (width <600px) {
-  .wrapper{
+  .wrapper {
     width: 97%;
   }
-  .container{
+  .container {
     padding: 4rem 1rem;
     width: 100%;
   }
   form button {
-    font-size: 2vw;
+    font-size: 3vw;
   }
   .container h2 {
     font-size: 3vw;
   }
-  ul li{
-    font-size: 1.5vw;
-    /* white-space: nowrap; */
+  ul li {
+    font-size: 4vw;
     padding: 1rem 1.5rem;
   }
-
 }
-
