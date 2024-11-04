@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const apiURL = "https://api.coingecko.com/api/v3/simple/price?ids=";
+  const apiURL = "https://api.coingecko.com/api/v3/simple/price?ids="; //#
 
   document.getElementById("add-btn").addEventListener("click", (e) => {
     e.preventDefault();
     const crypto = document.getElementById("crypto-select").value;
     const amount = document.getElementById("token-amount").value;
+    const loading = document.getElementById("loading");
 
     if (crypto && amount) {
-      fetch(`${apiURL}${crypto}&vs_currencies=usd`)
+      loading.style.display = "block";
+      fetch(`${apiURL}${crypto}&vs_currencies=usd`) //#
         .then((res) => res.json())
         .then((data) => {
           const price = data[crypto].usd;
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
           li.innerHTML = `
             <div>
               crypto name : <span class="crypto-name">${
-                crypto.charAt(0).toUpperCase() + crypto.slice(1)
+                crypto.charAt(0).toUpperCase() + crypto.slice(1) //#
               }</span><br>
               total Tokens : <span class="token-amount">${amount}</span><br>
               current price : <span class="total-price">$${totalValue.toFixed(
@@ -33,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           list.appendChild(li);
           document.getElementById("token-amount").value = "";
+          loading.style.display = "none";
 
           // Delete button
           li.querySelector(".delete-btn").addEventListener("click", () => {
@@ -53,15 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 li.querySelector(".token-amount").textContent;
 
               // Replace the content with input fields
-              li.querySelector(".crypto-name").innerHTML = `
-                <span>${currentCrypto}</span>
-              `;
-              li.querySelector(".token-amount").innerHTML = `
-                <input type="number" class="edit-amount" value="${currentAmount}">
-              `;
+              li.querySelector(
+                ".crypto-name"
+              ).innerHTML = `<span>${currentCrypto}</span>`;
+              li.querySelector(
+                ".token-amount"
+              ).innerHTML = `<input type="number" class="edit-amount" value="${currentAmount}">`;
 
               // Change edit button text to "Save"
               li.querySelector(".edit-btn").textContent = "Save";
+              li.querySelector(".edit-btn").style.backgroundColor = "green";
             } else {
               // Save changes
               isEditing = false;
@@ -83,11 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
               // Change edit button text back to "Edit"
               li.querySelector(".edit-btn").textContent = "Edit";
+              li.querySelector(".edit-btn").style.backgroundColor = "transparent";
             }
           });
         })
         .catch((err) => {
-          console.log(err);
+          console.log("Something went wrong", err);
         });
     } else {
       alert("Please enter a currency or crypto");
